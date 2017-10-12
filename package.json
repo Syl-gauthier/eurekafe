@@ -1,0 +1,24 @@
+{
+  "name": "eurekafe",
+  "version": "0.0.1",
+  "description": "Page vitrine et applications web pour le café du même nom (www.eurekafe.fr)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Eurekafe/eurekafe.git"
+  },
+  "keywords": [
+    "café",
+    "science",
+    "libre-service"
+  ],
+  "author": "Syl-gauthier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eurekafe/eurekafe/issues"
+  },
+  "homepage": "https://github.com/Eurekafe/eurekafe#readme"
+}
