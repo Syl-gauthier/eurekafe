@@ -4,6 +4,7 @@
   "description": "Page vitrine et applications web pour le café du même nom (www.eurekafe.fr)",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha"
   },
   "repository": {
