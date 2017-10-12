@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Eurekafe/eurekafe/issues"
   },
-  "homepage": "https://github.com/Eurekafe/eurekafe#readme"
+  "homepage": "https://github.com/Eurekafe/eurekafe#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
 }
