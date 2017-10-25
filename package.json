@@ -24,6 +24,11 @@
   "homepage": "https://github.com/Eurekafe/eurekafe#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "retweet": "^1.1.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }
