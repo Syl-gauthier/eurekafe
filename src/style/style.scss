@@ -1,14 +1,100 @@
 //style.scss
 @import './font-awesome/font-awesome.scss';
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left:0;
+  margin: auto;
+  min-height: 60px;
+  width: 100%;
+  background-color: grey;
+  z-index: 100;
+}
+
 header {
-  margin:30px;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
   text-align: center;
 
-  img{
-    width: 875px;
+  img {
+    filter: brightness(0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  h1 {
+    z-index: 1;
+    color: orange;
+    font-size: 20vh;
+    margin-top: 40vh;
   }
 }
+
+section {
+  font-size: 15px;
+  text-align: justify;
+  #concept {
+    background-color: orange;
+  }
+  #agenda {
+    background-color: orange;
+  }
+  article {
+    height: 70vh;
+    padding: 20px;
+    &.bg-container {
+      position: relative;
+      overflow: hidden;
+      .bg-img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        img  {
+          height: 150%;
+          position: absolute;
+          top: 0;
+          left: -50%;
+          z-index: -2;
+        }
+      }
+    }
+  }
+  &.demi{
+    display: flex;
+    article{
+      width: 50vw;
+    }
+    #gallerie{
+      div {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        button {
+          font-size: 40px;
+          position: relative;
+          left: -50%;
+          top: -20px;
+        }
+      }
+      img {
+        filter: brightness(0.5);
+      }
+    }
+  }
+}
+
+
 
 #mainWrapper {
   margin:30px;
@@ -30,25 +116,27 @@ header {
       margin: 0 20px;
     }
 
-    span {
+    
+  }
+}
 
-      i:first-child {
-        color: #ffe07b;
-      }
-      
-      i:last-child{
-        color: white;
-      }
+span {
 
-      &:hover{
-        i:first-child {
-          color: #ff8822;
-        }
-        
-        i:last-child{
-          color: white;
-      }
-      }
+  i:first-child {
+    color: #ffe07b;
+  }
+  
+  i:last-child{
+    color: white;
+  }
+
+  &:hover{
+    i:first-child {
+      color: #ff8822;
+    }
+    
+    i:last-child{
+      color: white;
     }
   }
 }

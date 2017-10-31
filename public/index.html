@@ -2,40 +2,122 @@
 <head>
 	<meta charset='utf-8'>
 	<link rel="stylesheet" type="text/css" href="/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
 	<title>Eurêkafé</title>
 </head>
-<body>
+<body>	
+	<nav>
+		<a href="#concept">Le concept</a>
+		<a href="#agenda">L'agenda</a>
+		<a href="#contact">Carte et contact</a>
+	</nav>
 	<header>
-		<img src="/images/bannière.png">
+		<img src="/images/random-cafe.jpg" class="heightRef">
+		<h1>Eurëkafé</h1>
+		<a href="#concept">suite</a>
 	</header>
-	<div id="mainWrapper">
-		<section>
-			<img src="/images/en+construction.png">
-		</section>
-		<section id="social-link">
-			<a href="https://facebook.com/leurekafe">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-circle fa-stack-2x"></i>
-			  		<i class="fa fa-facebook fa-stack-1x"></i>
-				</span>
+	<section class="demi">
+		<article id="concept">
+			<h2>Le concept</h2>
+			<p>
+				Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.<br/>
+				Tu autem, Fanni, quod mihi tantum tribui dicis quantum ego nec adgnosco nec postulo, facis amice; sed, ut mihi videris, non recte iudicas de Catone; aut enim nemo, quod quidem magis credo, aut si quisquam, ille sapiens fuit. Quo modo, ut alia omittam, mortem filii tulit! memineram Paulum, videram Galum, sed hi in pueris, Cato in perfecto et spectato viro.<br/>
+				Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+			</p>
+		</article>
+		<article id="gallerie" class="bg-container deep">
+			<a href="#" class="bg-img">
+				<img src="/images/en+construction.png">
 			</a>
-			<a href="https://twitter.com/EurekafeTLS">
-				<span class="fa-stack fa-lg">
-				  	<i class="fa fa-circle fa-stack-2x"></i>
-				  	<i class="fa fa-twitter fa-stack-1x"></i>
-				</span>
+			<div>
+				<button>Gallerie</button>
+			</div>
+		</article>
+	</section>
+	<section class="demi">
+		<article class="bg-container deep">
+			<a href="#" class="bg-img">
+				<img src="/images/sombrero galaxy.jpg" alt="photo du jour">
 			</a>
-			<a href="mailto:contact@eurekafe.fr">
-				<span class="fa-stack fa-lg">
-				  	<i class="fa fa-circle fa-stack-2x"></i>
-				  	<i class="fa fa-envelope fa-stack-1x"></i>
-				</span>
-			</a>			
-		</section>
-		<section>
-			<p>Eurêkafé2017© Tous droits réservés.</p>
-		</section>
-	</div>
+		</article>
+		<article id="agenda">
+			<h3>Agenda</h3>
+		</article>
+	</section>
+	<section id="contact" class="demi">
+		<article>
+
+		</article>
+		<article>adresse + contact</article>
+	</section>
+	<footer>
+		<a href="https://facebook.com/leurekafe">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+		  		<i class="fa fa-facebook fa-stack-1x"></i>
+			</span>
+		</a>
+		<a href="https://twitter.com/EurekafeTLS">
+			<span class="fa-stack fa-lg">
+			  	<i class="fa fa-circle fa-stack-2x"></i>
+			  	<i class="fa fa-twitter fa-stack-1x"></i>
+			</span>
+		</a>
+		<a href="mailto:contact@eurekafe.fr">
+			<span class="fa-stack fa-lg">
+			  	<i class="fa fa-circle fa-stack-2x"></i>
+			  	<i class="fa fa-envelope fa-stack-1x"></i>
+			</span>
+		</a>
+		<p>Eurêkafé2017© Tous droits réservés.</p>
+	</footer>
+
+	<script src="/script/jquery/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+
+			$('a[href^="#"]').on('click',function (e) {
+			    e.preventDefault();
+			    console.log(this);
+			    var target = this.hash;
+			    var $target = $(target);
+
+			    $('html, body').stop().animate({
+			        'scrollTop': $target.offset().top - 60
+			    }, 900, 'swing', function () {
+			        window.location.hash = target;
+			    });
+			});
+
+			$(".deep").each(function() {
+				var deep = $(this);
+				var containerWidth = deep.width();
+				var containerLeft = deep.offset().left;
+				var imageWidth = deep.find("img").width();
+				var leftOffset = (imageWidth - containerWidth) / 2;
+				deep.find("img").offset({left: containerLeft - leftOffset})
+				console.log(leftOffset);
+				$(document).scroll(function() {
+					
+					var scrollTop = $("body").scrollTop();
+					var windowHeight = screen.height;
+					var containerTop = deep.offset().top;
+					var containerHeight = deep.height();
+					var imageHeight = deep.find("img").height();
+					var initialOffset = containerHeight / 2;
+					var maxOffset = imageHeight - containerHeight;
+					var factor = maxOffset / ( containerHeight + windowHeight );
+					var constant = windowHeight - containerTop;
+					var imageOffset = factor * (scrollTop + constant);
+					deep.children("a").offset({top: containerTop - maxOffset + 30 +  imageOffset});
+				});
+			});
+		});
+		
+	</script>
+	
 </body>
+
 </html>
