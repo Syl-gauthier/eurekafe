@@ -8,15 +8,22 @@
 </head>
 <body>	
 	<nav>
+		<a href="#top">Eurêkafé</a>
 		<a href="#concept">Le concept</a>
 		<a href="#agenda">L'agenda</a>
 		<a href="#contact">Carte et contact</a>
 	</nav>
-	<header>
+	<header id="top">
 		<img src="/images/random-cafe.jpg" class="heightRef">
-		<h1>Eurëkafé</h1>
-		<a href="#concept">suite</a>
+		<h1>Eurêkafé</h1>
+		<a href="#concept">
+			<span class="fa-stack fa-lg">
+			  	<i class="fa fa-circle fa-stack-2x"></i>
+			  	<i class="fa fa-angle-down fa-stack-2x"></i>
+			</span>
+		</a>
 	</header>
+	<section>services?</section>
 	<section class="demi">
 		<article id="concept">
 			<h2>Le concept</h2>
@@ -45,11 +52,19 @@
 			<h3>Agenda</h3>
 		</article>
 	</section>
-	<section id="contact" class="demi">
-		<article>
-
+	<section class="demi">
+		<article id="contact">
+			<div>
+				adresse + contact
+			</div>
 		</article>
-		<article>adresse + contact</article>
+		<article id="map">
+			<iframe
+  				frameborder="0" style="border:0"
+  				src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBbhvb5Yqyf3LW-hgp5YvNoYSlGFxehS3g&center=43.602968,1.442261&zoom=16" allowfullscreen>
+			</iframe>
+		</article>
+
 	</section>
 	<footer>
 		<a href="https://facebook.com/leurekafe">
@@ -70,6 +85,7 @@
 			  	<i class="fa fa-envelope fa-stack-1x"></i>
 			</span>
 		</a>
+		<p>Newsletter?</p>
 		<p>Eurêkafé2017© Tous droits réservés.</p>
 	</footer>
 
