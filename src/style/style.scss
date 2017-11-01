@@ -1,0 +1,170 @@
+//style.scss
+@import './font-awesome/font-awesome.scss';
+@import './variables.scss';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left:0;
+  margin: auto;
+  min-height: $navHeight - 40px;
+  width: 100%;
+  background-color: $navColor;
+  z-index: 100;
+  border-bottom: 2px solid white;
+  a {
+    min-width: 8vw;
+    margin: 5px 0 5px 5px;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    text-align: center;
+    &:hover {
+      background-color: $buttonHover;
+    }
+  }
+}
+
+footer {
+  padding: 15px;
+  background-color: $navColor;
+  text-align: center;
+  a {
+    text-decoration: none;
+    font-size: 25px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  text-align: center;
+
+  img {
+    filter: brightness(0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  h1 {
+    z-index: 1;
+    color: $titleColor;
+    font-size: $titleSize;
+    margin-top: (100 - $titleSize) /2;
+    margin-bottom: 4vh;
+  }
+
+  a {
+    font-size: 3vh;
+  }
+}
+
+section {
+  font-size: 15px;
+  text-align: justify;
+  &.demi{
+    display: flex;
+    article{
+      width: 50vw;
+    }
+  }
+
+  article {
+    height: 60vh;
+    padding: 20px;
+    &.bg-container {
+      position: relative;
+      overflow: hidden;
+      .bg-img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        img  {
+          height: 150%;
+          position: absolute;
+          top: 0;
+          left: -50%;
+          z-index: -2;
+        }
+      }
+    }
+  }
+
+  #concept {
+    background-color: $conceptColor;
+  }
+  #agenda {
+    background-color: $agendaColor;
+  }
+  #contact {
+    background-color: $contactColor;
+    padding:0px;
+    div {
+      padding: 20px;
+    }
+  }
+  #map {
+    padding: 0;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  #gallerie{
+    div {
+      position: absolute;
+      top:50%;
+      left: 50%;
+      button {
+        font-size: 40px;
+        position: relative;
+        left: -50%;
+        top: -20px;
+      }
+    }
+    img {
+      filter: brightness(0.5);
+    }
+  }  
+}
+
+span {
+  i:first-child {
+    color: $buttonBackground;
+  }
+  
+  i:last-child{
+    color: $buttonColor;
+  }
+
+  &:hover{
+    i:first-child {
+      color: $buttonHover;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    i:last-child{
+      color: $buttonColor;
+    }
+  }
+}
+
+
