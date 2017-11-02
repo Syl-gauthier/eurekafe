@@ -20,31 +20,23 @@ nav {
   a {
     min-width: 8vw;
     margin: 5px 0 5px 5px;
-    padding: 20px;
+    padding: 1vw;
     display: inline-block;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 3vh;
     border: 1px solid black;
     text-align: center;
     &:hover {
       background-color: $buttonHover;
     }
   }
-}
 
-footer {
-  padding: 15px;
-  background-color: $navColor;
-  text-align: center;
-  a {
-    text-decoration: none;
-    font-size: 25px;
+  @media screen and (max-width: 720px) {
+    display: none;
   }
-  p {
-    margin: 0;
-  }
+  
 }
 
 header {
@@ -67,10 +59,27 @@ header {
     font-size: $titleSize;
     margin-top: (100 - $titleSize) /2;
     margin-bottom: 4vh;
+
+    @media screen and (max-width: 450px) {
+      font-size: 8vh;
+    }
   }
 
   a {
     font-size: 3vh;
+  }
+}
+
+footer {
+  padding: 15px;
+  background-color: $navColor;
+  text-align: center;
+  a {
+    text-decoration: none;
+    font-size: 25px;
+  }
+  p {
+    margin: 0;
   }
 }
 
@@ -82,14 +91,19 @@ section {
     article{
       width: 50vw;
     }
+    @media screen and (max-width:450px) {
+      display:block;
+      article {
+        width: 100vw;
+      }
+    }
   }
 
   article {
     height: 60vh;
-    padding: 20px;
+    overflow: hidden;
     &.bg-container {
       position: relative;
-      overflow: hidden;
       .bg-img {
         height: 100%;
         width: 100%;
@@ -105,6 +119,10 @@ section {
         }
       }
     }
+  }
+
+  .text{
+    padding: 20px;
   }
 
   #concept {
