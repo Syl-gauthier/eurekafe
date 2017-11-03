@@ -1,0 +1,29 @@
+//- views/global.pug
+
+doctype html
+html
+  head
+    meta("charset"="utf-8")
+    
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title publish
+    link(rel="icon" type="image/x-icon" href="/images/favicon/admin.ico")
+  
+  body
+    form(method="post" action="")
+      input(type="text" name="title") 
+      br
+      label(for="contenu") Contenu
+      textarea(id="contenu")
+      br
+      input(type="checkbox" id="facebook" name="facebook" value="true")
+      label(for="facebook") facebook <br/>
+      input(type="checkbox" id="twitter" name="twitter" value="true")
+      label(for="twitter") twitter <br/>
+      input(type="checkbox" id="event" name="event" value="true")
+      label(for="event") event <br/>
+      input(type="checkbox" id="newsletter" name="newsletter" value="true")
+      label(for="newsletter") newsletter <br/>
+      input(type="checkbox" id="mail" name="mail" value="true")
+      label(for="mail") mail <br/>
+      input(type="submit" name="submit")
