@@ -4,6 +4,8 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 @import './variables.scss';
 
+$fontUrl: "../misc/font";
+@import '../misc/font/kaushan-script/kaushan.scss';
 
 html, body {
   margin: 0;
@@ -59,6 +61,7 @@ header {
   h1 {
     z-index: 1;
     color: $titleColor;
+    font-family: kaushan;
     font-size: $titleSize;
     margin-top: (100 - $titleSize) /2;
     margin-bottom: 4vh;

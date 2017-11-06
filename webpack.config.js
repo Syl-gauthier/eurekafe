@@ -16,12 +16,13 @@ module.exports = {
       use: ExtractTextPlugin.extract({
         fallback: "style-loader",
         //resolve-url-loader may be chained before sass-loader if necessary
-        use: ["css-loader", "sass-loader"]
+        use: ["css-loader", "resolve-url-loader", "sass-loader"]
       })
     },
     {
       test: /\.(woff|woff2|eot|ttf|otf|svg|ico)$/,
-      loader: "file-loader"
+      loader: "file-loader",
+      options: {name: "[name].[ext]"}
     },
     {
       test: /\.(png|svg|jpg|gif)$/,
