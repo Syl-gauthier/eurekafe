@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" type="image/x-icon" href=require("./images/favicon/favicon.ico"))
+    title Eurêkafé
+  
+  body
+    nav
+      a(href="#top") Eurêkafé
+      a(href="#concept") Le concept
+      a(href="#agenda") L'agenda
+      a(href="#contact") Carte et contact
+    header(id="top")
+      img(src=require("./images/random-cafe.jpg") class="heightRef")
+      h1 Eurêkafé
+      a(href="#concept")
+        span(class="fa-stack fa-lg")
+            i(class="fa fa-circle fa-stack-2x")
+            i(class="fa fa-angle-down fa-stack-2x")
+    section services?
+    section(class="demi")
+      article(id="concept")
+        div(class="text")
+          h2 Le concept
+          p.
+            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.<br/>
+            Tu autem, Fanni, quod mihi tantum tribui dicis quantum ego nec adgnosco nec postulo, facis amice; sed, ut mihi videris, non recte iudicas de Catone; aut enim nemo, quod quidem magis credo, aut si quisquam, ille sapiens fuit. Quo modo, ut alia omittam, mortem filii tulit! memineram Paulum, videram Galum, sed hi in pueris, Cato in perfecto et spectato viro.<br/>
+            Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+      article(id="gallerie" class="bg-container deep")
+        a(href="#" class="bg-img")
+          img(src=require("./images/en+construction.png"))
+          button Gallerie
+    section(class="demi")
+      article(class="bg-container deep")
+        a(href="#" class="bg-img")
+          img(src=require("./images/sombrero galaxy.jpg") alt="photo du jour")
+      article(id="agenda")
+        div(class="text")
+          h3 Agenda
+    section(class="demi")
+      article(id="contact")
+        div(class="text") adresse + contact
+      article(id="map")
+        iframe(frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBbhvb5Yqyf3LW-hgp5YvNoYSlGFxehS3g&center=43.602968,1.442261&zoom=16" allowfullscreen)
+
+    footer
+      a(href="https://facebook.com/leurekafe")
+        span(class="fa-stack fa-lg")
+            i(class="fa fa-circle fa-stack-2x")
+            i(class="fa fa-facebook fa-stack-1x")
+      a(href="https://twitter.com/EurekafeTLS")
+        span(class="fa-stack fa-lg")
+            i(class="fa fa-circle fa-stack-2x")
+            i(class="fa fa-twitter fa-stack-1x")
+      a(href="mailto:contact@eurekafe.fr")
+        span(class="fa-stack fa-lg")
+            i(class="fa fa-circle fa-stack-2x")
+            i(class="fa fa-envelope fa-stack-1x")
+      p Newsletter?
+      p Eurêkafé2017© Tous droits réservés.

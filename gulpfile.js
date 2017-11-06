@@ -4,32 +4,30 @@
 "use strict";
 
 var gulp = require("gulp");
-var rimraf = require("rimraf");
-var sass = require("gulp-sass");
-var cleanCSS = require("gulp-clean-css");
 var nodemon = require("nodemon");
+var rimraf= require("rimraf");
+var webpack = require("webpack-stream");
 
 gulp.task("default", ["server-prod"]);
 
-gulp.task("build", ["sass"], function() {
+gulp.task("build", ["webpack"], function() {
   process.exit(0);
 });
 
 gulp.task("clean", function(done) {
-  rimraf("public/style/*.css", function(err) {
+  rimraf("dist/**", function(err) {
     done(err);
   });
 });
 
-var buildSASS = function () {
-  return gulp.src("./src/style/style.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(cleanCSS({compatibility: "ie8"}))
-    .pipe(gulp.dest("./public/style/"));      
-};
+function buildWebpack() {
+  return gulp.src("src/index.js")
+    .pipe(webpack( require("./webpack.config.js") ))
+    .pipe(gulp.dest("dist/"));
+}
 
-gulp.task("sass", ["clean"], buildSASS);
-gulp.task("sass-watch", buildSASS);
+gulp.task("webpack", ["clean"], buildWebpack);
+gulp.task("webpack-watch", buildWebpack);
 
 gulp.task("server-prod", ["watch"], function() {
   // configure nodemon
@@ -45,6 +43,6 @@ gulp.task("server-prod", ["watch"], function() {
   });
 });
 
-gulp.task("watch", ["sass"], function () {
-  gulp.watch("./src/style/**/*.scss", ["sass-watch"]);
+gulp.task("watch", ["webpack"], function () {
+  gulp.watch("./src/**", ["webpack-watch"]);
 });
