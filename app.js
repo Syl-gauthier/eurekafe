@@ -8,7 +8,7 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser")
+var bodyParser = require("body-parser");
 
 var admin = require("./routes/admin.js");
 
