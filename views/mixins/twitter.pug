@@ -1,0 +1,27 @@
+mixin twitterPreview(id)
+	div.twitterContainer
+		div.twitterProfil
+			img(src="img/tweeter-profile.jpg")
+		i.fa.fa-angle-down.twitterArrow
+		div.tweetContent
+			div #[b Mon Nom Stylé] #[em @trolaclass 25h72]
+			div.tweetStatusPreview(id=id) Bonjour, voila mon jouli tweet.
+			img.rounded.mx-auto.d-block.twitterImg(id=id + "Img")
+			div.twitterIcons
+				i.fa.fa-comment-o
+				div 3,0k
+				i.fa.fa-retweet
+				div 16k
+				i.fa.fa-heart-o
+				div 35k
+				i.fa.fa-envelope-o
+
+mixin twitterForm
+	div.row#twitterForm
+		div.col#twitterInput
+			textarea#twitterStatus(maxlength=280  cols="50" name="twitter-status")
+			input#twitterImage(type="file" name="twitter-image")
+			div#char-count 0
+			div#char-left
+		div.col
+			+twitterPreview("id")

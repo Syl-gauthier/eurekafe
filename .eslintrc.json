@@ -13,9 +13,6 @@
 		},
 		"sourceType": "module"
 	},
-	"plugins": [
-		"react"
-	],
 	"rules": {
 		"indent": [
 			"error",
@@ -34,5 +31,11 @@
 			"always"
 		],
 		"no-console": "warn"
+	},
+	"globals": {
+		"$": true,
+		"jquery": true,
+		"window": true,
+		"document": true
 	}
 }

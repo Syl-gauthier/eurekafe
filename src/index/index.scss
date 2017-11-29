@@ -1,0 +1,165 @@
+//style.scss
+@import './variables.scss';
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+$fontUrl: "../misc/font";
+@import '../misc/font/kaushan-script/kaushan.scss';
+
+
+
+body {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.bg-filtered{
+    background: url("./images/random-cafe.jpg") no-repeat center;
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    filter: brightness(0.4);
+    z-index: -1;
+  }
+
+aside {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  z-index: 1030;
+  text-shadow: -3px -3px 8px rgba(0 ,0 ,0 , 0.5);
+  .fa {
+    opacity: 0.8;
+    color: $buttonColor;
+    &:hover {
+      opacity: 1;
+      text-shadow: -3px -3px 25px rgba(0 ,0 ,0 , 0.7);
+    }
+  }
+}
+
+header {
+  position: relative;
+  top: 40px;
+  overflow:hidden;
+  h1 {
+    color: $titleColor;
+    font-family: kaushan;
+    font-size: 10rem;
+    background: transparent;
+
+    @media (max-width: 767px) {
+      font-size: 20vw;
+    }
+  }
+}
+
+.container-fluid{
+  padding: 0;
+}
+
+.jumbotron-fluid{
+  padding: 8em 0;
+  @media (max-width: 767px) {
+    padding: 4em 0;
+  }
+}
+
+
+section {
+  background: $sectionBackground;
+}
+
+article {
+  h1, h2, h3, p {
+    padding: 20px;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.parallax {
+  position: absolute;
+  top: -100px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  min-width: 100%;
+  height: 150%;
+}
+
+#concept-row {
+  button {
+    height: 100%;
+    width:100%;
+  }
+  div.col{
+    padding: 10px;
+  }
+
+  i {
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+}
+
+#presentation-row {
+  height: 500px;
+}
+
+#agenda-row {
+  height: 700px;
+}
+
+#map-row {
+  height: 600px;
+  #map iframe{
+    height:100%;
+    width: 100%;
+  }
+}
+
+#footer {
+  padding-top: 0.6rem;
+  min-height: 9.5rem;
+  color: white;
+  .row {
+    width: 100%;
+    .col>*:first-child{
+      padding: 0.8rem; 
+    }
+  }
+  #reseau {
+    span {
+      font-size: 2rem;
+      i:first-child {
+        color: $buttonColor;
+      }
+      
+      i:last-child{
+        color: white;
+      }
+
+      &:hover{
+        i:first-child {
+          color: $buttonColor;
+          text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+}

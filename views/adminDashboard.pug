@@ -1,0 +1,22 @@
+//- views/global.pug
+extends adminLayout.pug
+  
+block body
+  header.jumbotron: h1 Euêkafé: le tableau de bord.
+  div.container
+
+    section.row
+      div.col-6
+        h3 Feeds
+        ul
+          li: a(href="/admin/publish") Instagram 
+          li: a(href="/admin/twitterFeed") Twitter 
+          li: a(href="/admin/facebookFeed") Facebook
+          li: a(href="/admin/otherFeed") Youtube 
+      div.col-6
+        h3 Sénarios
+        ul
+          li: a(href="/admin/senar?type=annonce") Annonce générale
+          li: a(href="/admin/senar?type=revue") Revue de la semaine
+          li: a(href="/admin/senar?type=article") Article de fond
+          li: a(href="/admin/senar?type=evenement") Évenement

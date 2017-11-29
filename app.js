@@ -3,15 +3,28 @@
 
 "use strict";
 
+require("dotenv").config();
+
 const express = require("express");
 const morgan = require("morgan");
+var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser")
 
+var admin = require("./routes/admin.js");
 
 const app = express();
 
 app.use(morgan("tiny"));
 
-app.use(express.static("public"));
+app.set("view engine", "pug");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+
+app.use(express.static("dist"));
+
+app.use("/admin", admin);
 
 const port = process.env.PORT||3000;
 

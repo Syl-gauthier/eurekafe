@@ -1,0 +1,129 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" type="image/x-icon" href=require("./images/favicon/favicon.ico"))
+    title Eurêkafé
+  
+  body(data-spy="scroll" data-target="#navbarSpyed" data-offset="70")
+
+    div(class="bg-filtered")
+
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top#navbarSpyed
+      a.navbar-brand(href="#top") Eurêkafé
+      div(class="nav nav-pills"): ul(class="navbar-nav mr-auto")
+        li(class="navbar-item"): a(href="#concept-row" class="nav-link") Le concept
+        li(class="navbar-item"): a(href="#presentation-row" class="nav-link") Presentation
+        li(class="navbar-item"): a(href="#agenda-row" class="nav-link") L'agenda
+        li(class="navbar-item"): a(href="#map-row" class="nav-link") Carte et contact
+
+    aside
+      a(href="#top")
+        i.fa.fa-arrow-circle-down.fa-rotate-180.fa-2x
+
+    header.jumbotron-fluid(id="top")
+      div(class="bg-filtered")
+      div.container.text-center
+        h1 Eurêkafé
+
+    div.container-fluid#concept-row
+      section.row.no-gutters#concept-row
+        div.col: button.btn.btn-primary(type="button" data-toggle="popover" title="Popover title" data-content=" Tu autem, Fanni, quod mihi tantum tribui dicis quantum ego nec adgnosco nec postulo, facis amice; sed, ut mihi videris, non recte iudicas de Catone; aut enim nemo, quod quidem magis credo, aut si quisquam, ille sapiens fuit. Quo modo, ut alia omittam, mortem filii tulit! memineram Paulum, videram Galum, sed hi in pueris, Cato in perfecto et spectato viro.")
+          i.fa.fa-cutlery
+          p manger
+        div.col: button.btn.btn-primary(type="button" data-toggle="popover" title="Popover title" data-content="Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.")
+          i.fa.fa-coffee
+          p boire un verre
+        div.col: button.btn.btn-primary(type="button" data-toggle="popover" title="Popover title" data-content="Quod quidem magis credo, aut si quisquam, ille sapiens fuit. Quo modo, ut alia omittam, mortem filii tulit! memineram Paulum, videram Galum, sed hi in pueris, Cato in perfecto et spectato viro. Tu autem, Fanni, quod mihi tantum tribui dicis quantum ego nec adgnosco nec postulo, facis amice; sed, ut mihi videris, non recte iudicas de Catone; aut enim nemo ?")
+          i.fa.fa-wifi
+          p wifi
+        div.col: button.btn.btn-primary(type="button" data-toggle="popover" title="Popover title" data-content="Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.")
+          i.fa.fa-plug
+          p éléctricité
+        div.col: button.btn.btn-primary(type="button" data-toggle="popover" title="Popover title" data-content="Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.")
+          i.fa.fa-flask
+          p science
+      
+          
+
+      section.row.no-gutters
+        article.col-10.offset-1 bonjour
+
+      section.row.no-gutters(id="presentation-row")
+        article.col-sm-5.col-12(id="presentation")
+          h2 Le concept
+          p.
+            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo, cum consiliis armisque regem superasset Antiochum. quam autem sit pulchrum exigua haec spernentem et minima ad ascensus verae gloriae tendere longos et arduos, ut memorat vates Ascraeus, Censorius Cato monstravit. qui interrogatus quam ob rem inter multos... statuam non haberet malo inquit ambigere bonos quam ob rem id non meruerim, quam quod est gravius cur inpetraverim mussitare.<br/>
+            Tu autem, Fanni, quod mihi tantum tribui dicis quantum ego nec adgnosco nec postulo, facis amice; sed, ut mihi videris, non recte iudicas de Catone; aut enim nemo, quod quidem magis credo, aut si quisquam, ille sapiens fuit. Quo modo, ut alia omittam, mortem filii tulit! memineram Paulum, videram Galum, sed hi in pueris, Cato in perfecto et spectato viro.
+        article.col-sm-7.col-12(id="gallerie")
+          figure.parallax-container
+            img.parallax(src=require("./images/en+construction.png"))
+
+      section.row.no-gutters(id="agenda-row")
+        article.col-sm-7.order-sm-1.col-12.order-2
+          figure.parallax-container
+            img.parallax(src=require("./images/sombrero galaxy.jpg") alt="photo du jour")
+        article.col-sm-5.order-sm-2.col-12.order-1(id="agenda")
+          h3 Agenda
+
+      section.row.no-gutters(id="map-row")
+        article.col-sm-6.col-12(id="contact")
+          h3 adresse + contact
+        article.col-sm-6.col-12(id="map")
+          iframe(frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBbhvb5Yqyf3LW-hgp5YvNoYSlGFxehS3g&center=43.602968,1.442261&zoom=16" allowfullscreen)
+
+    footer.container-fluid.bg-dark.text-center#footer
+      div.row
+        div.col
+          div.container
+            div.row.justify-content-center Suivez vous sur les réseaux:
+            div.row.justify-content-center#reseau
+              div.col-1
+                a(href="https://facebook.com/leurekafe")
+                  span(class="fa-stack fa-lg")
+                    i(class="fa fa-circle fa-stack-2x")
+                    i(class="fa fa-facebook fa-stack-1x")
+              div.col-1
+                a(href="mailto:contact@eurekafe.fr")
+                  span(class="fa-stack fa-lg")
+                    i(class="fa fa-circle fa-stack-2x")
+                    i(class="fa fa-envelope fa-stack-1x")
+              div.col-1
+                a(href="https://twitter.com/EurekafeTLS")
+                  span(class="fa-stack fa-lg")
+                    i(class="fa fa-circle fa-stack-2x")
+                    i(class="fa fa-twitter fa-stack-1x")
+          
+        div.col
+          div S'abonner à la newsletter
+          button.btn.btn-primary(type="button" data-toggle="modal" data-target="#newsModal") Avec plaisir
+      div.row.justify-content-center Eurêkafé2017© Tous droits réservés.
+
+    div.modal.fade#newsModal(tabindex="-1" role="dialog" aria-labelledby="newsModalTitle" aria-hidden="true")
+      div.modal-dialog(role="document")
+        div.modal-content
+          div.modal-header
+            h5.modal-title#newsModalTitle Inscription à la newsletter
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times;
+          div.modal-body
+            form
+              div.form-group
+                label(for="newsEmail") email 
+                input.form-control#newsEmail(type="text")
+              div.form-check
+                label.form-check-label(for="type1")
+                  input.form-check-input#type1(type="checkbox" checked)
+                  |type1
+                br
+                label.form-check-label(for="type2") 
+                  input.form-check-input#type2(type="checkbox" checked)
+                  |type2
+                br
+                label.form-check-label(for="type3") 
+                  input.form-check-input#type3(type="checkbox" checked)
+                  |type3
+                br
+          div.modal-footer
+            button.btn.btn-primary(type="button") S'inscrire
