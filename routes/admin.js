@@ -31,17 +31,20 @@ passport.deserializeUser(function(user, done) {
   return done(null, user);
 });
 
-passport.use(new facebookStrat({
-  clientID: process.env.FACEBOOK_ID,
-  clientSecret: process.env.FACEBOOK_SECRET,
-  callbackURL: "/admin/auth/callback",
-  profileFields: ["id", "displayName", "photos", "email"]
-},
-function(accessToken, refreshToken, profile, cb) {
-  profile.accessToken = accessToken;
-  profile.refreshToken = refreshToken;
-  cb(null, profile);
-}));
+if(process.env.FACEBOOK_ID && process.env.FACEBOOK_SECRET) {
+  passport.use(new facebookStrat({
+    clientID: process.env.FACEBOOK_ID,
+    clientSecret: process.env.FACEBOOK_SECRET,
+    callbackURL: "/admin/auth/callback",
+    profileFields: ["id", "displayName", "photos", "email"]
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    profile.accessToken = accessToken;
+    profile.refreshToken = refreshToken;
+    cb(null, profile);
+  })); 
+}
+
 
 router.get("/", passport.authenticate("facebook", {scope: ["email", "manage_pages", "publish_pages"]}));
 
