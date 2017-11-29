@@ -1,40 +1,48 @@
-import "bootstrap";
 import "./index/index.scss";
+import "bootstrap";
 
+$(document).ready(function() {  
 
-$(document).ready(function() {
-  $("a[href^='#']").on("click",function (e) {
+  $("[data-toggle='popover']").popover({trigger: "hover", placement: "bottom"});
+  
+  $("a[href^='#']").not("a[href='#manger'], a[href='#boire'], a[href='#elec'], a[href='#wifi'], a[href='#science']").on("click",function (e) {
     e.preventDefault();
     var target = this.hash;
     var $target = $(target);
+    var offset = $target.offset().top - 50;
 
     $("html, body").stop().animate({
-      "scrollTop": $target.offset().top - 60
-    }, 900, "swing", function () {
-      window.location.hash = target;
-    });
+      "scrollTop": (offset)
+    }, 900, "swing");
   });
 
-  $(".deep").each(function() {
-    var deep = $(this);
-    var containerWidth = deep.width();
-    var containerLeft = deep.offset().left;
-    var imageWidth = deep.find("img").width();
-    var leftOffset = (imageWidth - containerWidth) / 2;
-    deep.find("img").offset({left: containerLeft - leftOffset});
+
+  $(".parallax-container").each(function() {
+    var pContainer = $(this);
     $(document).scroll(function() {
-      var scrollTop = $("html").scrollTop();
-      var windowHeight = screen.height;
-      var containerTop = deep.offset().top;
-      var containerHeight = deep.height();
-      var imageHeight = deep.find("img").height();
-      //var initialOffset = containerHeight / 2;
-      var maxOffset = imageHeight - containerHeight;
-      var factor = maxOffset / ( containerHeight + windowHeight );
-      var constant = windowHeight - containerTop;
-      var imageOffset = factor * (scrollTop + constant);
+      var dim = {};
 
-      deep.children("a").offset({top: containerTop - maxOffset + 30 +  imageOffset});
+      //variable
+      dim.scrollTop = $("html").scrollTop();
+
+      //variable when resize
+      dim.windowHeight = screen.height;
+      dim.containerTop = pContainer.offset().top;
+      dim.imageHeight = pContainer.find("img").height();
+
+      //constant
+      dim.containerHeight = pContainer.height();
+
+      //calculated
+      dim.maxOffset = dim.imageHeight - dim.containerHeight;
+      dim.a = dim.maxOffset / (dim.containerHeight + dim.windowHeight);
+      dim.b = dim.windowHeight - dim.containerTop;
+      //f(scrollTop) = a(scrollTop + b);
+      dim.imageOffset = dim.a * (dim.scrollTop + dim.b);
+
+      pContainer.children("img").offset({top: dim.containerTop + dim.imageOffset - dim.maxOffset});
     });
   });
+
+
 });

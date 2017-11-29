@@ -1,0 +1,64 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+body {
+	background-color: lightgrey;
+}
+
+.twitterContainer {
+	background-color: #f5f8fa;
+	color: black;
+	position: relative;
+	width: 588px;
+	padding: 9px 12px 6px 12px;
+	.twitterProfil {
+		position: absolute;
+		top: 9px;
+		left: 12px;
+		width: 48px;
+		height: 48px;
+		img{
+			height:48px;
+			border-radius: 24px;
+		} 
+	}
+	.twitterArrow {
+		position: absolute;
+		top: 9px;
+		right: 12px;
+		float: right;
+	}
+	.tweetContent {
+		width: 506;
+		height: 196;
+		margin-left: 58px;
+		em {
+			color: grey;
+			font-style: normal;
+		}
+		.tweetStatusPreview {
+			span {
+				color: blue !important;
+			}
+		}
+		.twitterImg {
+			margin: 10px 0;
+			max-height: 506px;
+			max-width: 503px;
+		}
+		.twitterIcons {
+			margin-top: 10px;
+			i {
+				margin-right: 10px;
+			}
+			div{
+				margin-right: 30px;
+			}
+			* {
+				display: inline-block;
+			}
+		}
+	}
+}

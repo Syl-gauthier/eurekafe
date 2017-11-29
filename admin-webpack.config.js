@@ -1,23 +1,23 @@
 const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require ("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require ("html-webpack-plugin");
+//const HtmlWebpackPlugin = require ("html-webpack-plugin");
 const CleanWebpackPlugin = require ("clean-webpack-plugin");
 
 module.exports = {
-  entry: {index: "./src/index.js"},
+  entry: {admin: "./src/admin.js"},
   output: {
     filename: "[name]/[name].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist-admin")
   },
   module: {
     rules: [{
-      test: /\.(woff|woff2|eot|ttf|otf|svg|ico)$/,
+      test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
       loader: "file-loader",
       options: {name: "font/[name].[ext]"}
     },
     {
-      test: /\.(png|svg|jpg|gif)$/,
+      test: /\.(png|svg|jpg|gif|ico)$/,
       loader: "file-loader",
       options: {name: "img/[name].[ext]"}
     },
@@ -39,8 +39,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("[name].style.css"),
-    new HtmlWebpackPlugin({template: "./src/index/index.pug"}),
-    new CleanWebpackPlugin(["dist"]),
+    //new HtmlWebpackPlugin({template: "./src/index/index.pug"}),
+    new CleanWebpackPlugin(["dist-admin"]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jquery: "jquery",

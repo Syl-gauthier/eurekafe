@@ -1,0 +1,11 @@
+extends adminLayout.pug
+
+include mixins/twitter.pug
+
+block body
+	p #{type}
+	form.container(action="/admin/submit" method="post" enctype="multipart/form-data")
+		+twitterForm
+		input(type="submit")
+
+

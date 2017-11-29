@@ -1,19 +1,22 @@
 //- views/global.pug
-
-doctype html
-html
-  head
-    meta("charset"="utf-8")
-    
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    title publish
-    link(rel="icon" type="image/x-icon" href="/images/favicon/admin.ico")
+extends adminLayout.pug
   
-  body
-    header: h1 Euêkafé: le tableau de bord.
+block body
+  header.jumbotron: h1 Euêkafé: le tableau de bord.
+  div.container
 
-    section(id="liens")
-      a(href="/admin/publish") publier </br>
-      a(href="/admin/twitterFeed") feed Twitter </br>
-      a(href="/admin/facebookFeed") feed Facebook </br>
-      a(href="/admin/otherFeed") feed autres </br>
+    section.row
+      div.col-6
+        h3 Feeds
+        ul
+          li: a(href="/admin/publish") Instagram 
+          li: a(href="/admin/twitterFeed") Twitter 
+          li: a(href="/admin/facebookFeed") Facebook
+          li: a(href="/admin/otherFeed") Youtube 
+      div.col-6
+        h3 Sénarios
+        ul
+          li: a(href="/admin/senar?type=annonce") Annonce générale
+          li: a(href="/admin/senar?type=revue") Revue de la semaine
+          li: a(href="/admin/senar?type=article") Article de fond
+          li: a(href="/admin/senar?type=evenement") Évenement

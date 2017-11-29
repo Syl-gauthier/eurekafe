@@ -1,194 +1,165 @@
 //style.scss
-@import '~bootstrap/scss/bootstrap.scss';
-$fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome.scss';
 @import './variables.scss';
 
+@import '~bootstrap/scss/bootstrap.scss';
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
 $fontUrl: "../misc/font";
 @import '../misc/font/kaushan-script/kaushan.scss';
 
-html, body {
-  margin: 0;
-  padding: 0;
+
+
+body {
+  position: relative;
+  padding-bottom: 0;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left:0;
-  margin: auto;
-  min-height: $navHeight - 40px;
-  width: 100%;
-  background-color: $navColor;
-  z-index: 100;
-  border-bottom: 2px solid white;
-  a {
-    min-width: 8vw;
-    margin: 5px 0 5px 5px;
-    padding: 1vw;
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 3vh;
-    border: 1px solid black;
-    text-align: center;
-    &:hover {
-      background-color: $buttonHover;
-    }
+.bg-filtered{
+    background: url("./images/random-cafe.jpg") no-repeat center;
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    filter: brightness(0.4);
+    z-index: -1;
   }
 
-  @media screen and (max-width: 720px) {
-    display: none;
+aside {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  z-index: 1030;
+  text-shadow: -3px -3px 8px rgba(0 ,0 ,0 , 0.5);
+  .fa {
+    opacity: 0.8;
+    color: $buttonColor;
+    &:hover {
+      opacity: 1;
+      text-shadow: -3px -3px 25px rgba(0 ,0 ,0 , 0.7);
+    }
   }
-  
 }
 
 header {
   position: relative;
-  overflow: hidden;
-  height: 100vh;
-  text-align: center;
-
-  img {
-    filter: brightness(0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
+  top: 40px;
+  overflow:hidden;
   h1 {
-    z-index: 1;
     color: $titleColor;
     font-family: kaushan;
-    font-size: $titleSize;
-    margin-top: (100 - $titleSize) /2;
-    margin-bottom: 4vh;
+    font-size: 10rem;
+    background: transparent;
 
-    @media screen and (max-width: 450px) {
-      font-size: 8vh;
+    @media (max-width: 767px) {
+      font-size: 20vw;
     }
   }
+}
 
-  a {
-    font-size: 3vh;
+.container-fluid{
+  padding: 0;
+}
+
+.jumbotron-fluid{
+  padding: 8em 0;
+  @media (max-width: 767px) {
+    padding: 4em 0;
   }
 }
 
-footer {
-  padding: 15px;
-  background-color: $navColor;
-  text-align: center;
-  a {
-    text-decoration: none;
-    font-size: 25px;
-  }
-  p {
-    margin: 0;
-  }
-}
 
 section {
-  font-size: 15px;
-  text-align: justify;
-  &.demi{
-    display: flex;
-    article{
-      width: 50vw;
-    }
-    @media screen and (max-width:450px) {
-      display:block;
-      article {
-        width: 100vw;
-      }
-    }
+  background: $sectionBackground;
+}
+
+article {
+  h1, h2, h3, p {
+    padding: 20px;
   }
 
-  article {
-    height: 60vh;
-    overflow: hidden;
-    &.bg-container {
-      position: relative;
-      .bg-img {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top:50%;
-        left: 50%;
-        img  {
-          height: 150%;
-          position: absolute;
-          top: 0;
-          left: -50%;
-          z-index: -2;
+  p {
+    text-align: justify;
+  }
+}
+
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.parallax {
+  position: absolute;
+  top: -100px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  min-width: 100%;
+  height: 150%;
+}
+
+#concept-row {
+  button {
+    height: 100%;
+    width:100%;
+  }
+  div.col{
+    padding: 10px;
+  }
+
+  i {
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+}
+
+#presentation-row {
+  height: 500px;
+}
+
+#agenda-row {
+  height: 700px;
+}
+
+#map-row {
+  height: 600px;
+  #map iframe{
+    height:100%;
+    width: 100%;
+  }
+}
+
+#footer {
+  padding-top: 0.6rem;
+  min-height: 9.5rem;
+  color: white;
+  .row {
+    width: 100%;
+    .col>*:first-child{
+      padding: 0.8rem; 
+    }
+  }
+  #reseau {
+    span {
+      font-size: 2rem;
+      i:first-child {
+        color: $buttonColor;
+      }
+      
+      i:last-child{
+        color: white;
+      }
+
+      &:hover{
+        i:first-child {
+          color: $buttonColor;
+          text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
         }
       }
     }
   }
-
-  .text{
-    padding: 20px;
-  }
-
-  #concept {
-    background-color: $conceptColor;
-  }
-  #agenda {
-    background-color: $agendaColor;
-  }
-  #contact {
-    background-color: $contactColor;
-    padding:0px;
-    div {
-      padding: 20px;
-    }
-  }
-  #map {
-    padding: 0;
-    iframe {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  #gallerie{
-    div {
-      position: absolute;
-      top:50%;
-      left: 50%;
-      button {
-        font-size: 40px;
-        position: relative;
-        left: -50%;
-        top: -20px;
-      }
-    }
-    img {
-      filter: brightness(0.5);
-    }
-  }  
 }
-
-span {
-  i:first-child {
-    color: $buttonBackground;
-  }
-  
-  i:last-child{
-    color: $buttonColor;
-  }
-
-  &:hover{
-    i:first-child {
-      color: $buttonHover;
-      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    i:last-child{
-      color: $buttonColor;
-    }
-  }
-}
-
-

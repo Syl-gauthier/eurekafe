@@ -1,17 +1,21 @@
+
+
+
 //navbar
 $navHeight: 60px;
 $navColor: #aa4411;
 
 //main title
 $titleColor: orange;
-$titleSize: 20vh;
+$display1-size: 10rem; //bootstrap variable
+
+//concept tab
+$transition-fade: opacity .05s linear;
+$tabBackground: lightgrey;
+
 
 //sections
-$conceptColor: #cc4411;
-$agendaColor: #ff8822;
-$contactColor: #dd3321;
+$sectionBackground: white;
 
 //button
-$buttonBackground: #ffcc33;
-$buttonColor: white;
-$buttonHover: #ff8822;
+$buttonColor: #ff6600;
