@@ -4,7 +4,7 @@
   "description": "Page vitrine et applications web pour le café du même nom (www.eurekafe.fr)",
   "main": "index.js",
   "scripts": {
-    "postinstall": "build",
+    "postinstall": "npm run build",
     "build": "gulp build",
     "watch": "webpack --watch",
     "start": "node app.js",
